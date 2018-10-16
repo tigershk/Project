@@ -3,13 +3,18 @@ import csv
 with open ('films.csv') as file:
     reader = csv.DictReader(file)
 
+    filmList=[]
     for row in reader:
-        # print (row)
-        # title,imdb_id=row
-        mylist= (row['title'],row['imdb_id'])
-        print (mylist)
-        #  print (row['id'],row['imdb_id'],row['title'],row['overview'])
+        filmDictionary= {
+                "movieid":row['id'],
+                "title":row['title'],
+                "imdbid":row['imdb_id'],
+                "overview":row['overview']
+                }
+        filmList.append(filmDictionary)
+
+        
+    print (filmList)
      
 
-my_list = ['foo', 'bar']
       
